@@ -1,0 +1,16 @@
+# Core vision & math
+opencv-python>=4.8.0
+mediapipe>=0.10.0
+numpy>=1.24.0
+
+# Cross-platform mouse control
+pynput>=1.7.6
+
+# Windows backend (optional)
+pywin32>=306; sys_platform == "win32"
+
+# macOS backend (optional)
+pyobjc-framework-Quartz>=9.0; sys_platform == "darwin"
+
+# Linux Wayland backend (optional)
+evdev>=1.6.1; sys_platform == "linux"
