@@ -15,7 +15,7 @@
 
 ---
 
-![KineMouse Demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtNm1iZzVwdHRvb3ZtNTR3b3MxcjBwdGM1OGI1Z2ltYXRtMGdrZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26tn33aiTi1jkl6H6/giphy.gif)
+![KineMouse Demo]()
 
 > **No special hardware. No drivers. Just a webcam and your hand.**
 
