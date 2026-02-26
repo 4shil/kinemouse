@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "kinemouse"
+version = "0.1.0"
+description = "Zero-latency cross-platform gesture mouse via webcam"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "4shil", email = "166588383+4shil@users.noreply.github.com" }]
+requires-python = ">=3.10"
+keywords = ["gesture", "mouse", "computer-vision", "mediapipe", "accessibility"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Video :: Capture",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+]
+dependencies = [
+    "opencv-python>=4.8.0",
+    "mediapipe>=0.10.0",
+    "numpy>=1.24.0",
+    "pynput>=1.7.6",
+]
+
+[project.optional-dependencies]
+wayland = ["evdev>=1.6.1"]
+tray   = ["pystray>=0.19", "Pillow>=9.0"]
+dev    = ["pytest>=7.0", "pytest-cov", "ruff", "black", "mypy"]
+
+[project.scripts]
+kinemouse = "kinemouse.cli:main"
+
+[project.urls]
+Homepage   = "https://github.com/4shil/kinemouse"
+Repository = "https://github.com/4shil/kinemouse"
+Issues     = "https://github.com/4shil/kinemouse/issues"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+ignore = ["E501", "E402"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
