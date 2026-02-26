@@ -52,3 +52,18 @@ class LinuxX11Backend(BaseBackend):
     def mouse_up(self, x: int, y: int) -> None:
         self._mouse.position = (x, y)
         self._mouse.release(Button.left)
+
+
+# --- Scroll support ---
+from kinemouse.backends.scroll_mixin import ScrollMixin
+from pynput.mouse import Button
+
+
+class LinuxX11BackendWithScroll(LinuxX11Backend, ScrollMixin):
+    """LinuxX11Backend extended with scroll wheel support."""
+
+    def _scroll_up(self, magnitude: int):
+        self._mouse.scroll(0, magnitude)
+
+    def _scroll_down(self, magnitude: int):
+        self._mouse.scroll(0, -magnitude)
